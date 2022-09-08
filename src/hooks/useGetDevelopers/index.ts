@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 
-import { DEVELOPERS_QUERY } from "../../services/queries";
+import { DEVELOPERS_QUERY } from "../../services/graphql/queries";
 
 const useGetDevelopers = () => {
   const { data, loading, error } = useQuery(DEVELOPERS_QUERY);
