@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+type Category = { id: number; name: string };
+
 type initialStateProps = {
-  categories: { id: number; name: string }[];
+  categories: Category[];
 };
 
 const initialState: initialStateProps = {
@@ -19,5 +21,9 @@ const categoriesSlice = createSlice({
 });
 
 export const { setCategories } = categoriesSlice.actions;
+
+export const getCategories: (state: initialStateProps) => Category[] = (
+  state
+) => state.categories;
 
 export default categoriesSlice.reducer;
