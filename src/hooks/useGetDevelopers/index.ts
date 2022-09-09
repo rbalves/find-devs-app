@@ -1,11 +1,38 @@
-import { useQuery } from "@apollo/client";
-
-import { DEVELOPERS_QUERY } from "../../services/queries";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import getAllDevelopers from "../../services/rest/getAllDevelopers";
+import {
+  getDevelopers,
+  setDevelopers,
+} from "../../store/modules/developers/reducer";
 
 const useGetDevelopers = () => {
-  const { data, loading, error } = useQuery(DEVELOPERS_QUERY);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
-  return { data, loading, error };
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getDevelopers = async () => {
+      try {
+        setLoading(true);
+
+        const data = await getAllDevelopers();
+
+        dispatch(setDevelopers(data));
+      } catch {
+        setError(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getDevelopers();
+  }, []);
+
+  const developers = useSelector(getDevelopers);
+
+  return { developers, loading, error };
 };
 
 export default useGetDevelopers;
