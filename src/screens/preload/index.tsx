@@ -1,6 +1,7 @@
 import React from "react";
 import { VStack, Center, Image, Button, Text } from "native-base";
 import { useNavigation } from '@react-navigation/native';
+import { colors } from "../../styles/base";
 
 export function Preload() {
     const navigation = useNavigation();
@@ -15,10 +16,10 @@ export function Preload() {
         <Center
             height='full'
             _dark={{
-                bg: "#282b30"
+                bg: colors.bgDark
             }}
             _light={{
-                bg: "#044D65"
+                bg: colors.blue1
             }}
         >
             <VStack
@@ -38,17 +39,17 @@ export function Preload() {
                 <Button 
                     onPress={() => handleScreen('Login')}
                     size="lg"
-                    bg="#fff"
+                    bg={colors.white}
                     mt={10}
                 >
-                    <Text color='#000'>Login</Text>
+                    <Text color={colors.black}>Login</Text>
                 </Button>
                 <Button 
                     onPress={() => handleScreen('Home')}
                     variant="outline"
                     size="lg"
                 >
-                    <Text color='#fff'>Criar Conta</Text>
+                    <Text color={colors.white}>Criar Conta</Text>
                 </Button>
             </VStack>
         </Center>

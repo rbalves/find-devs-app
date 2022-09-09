@@ -19,6 +19,7 @@ import { VStack,
 import { MaterialIcons } from '@expo/vector-icons/'
 
 import { useNavigation } from '@react-navigation/native';
+import { colors } from "../../styles/base";
 
 export function Login() {
     const navigation = useNavigation();
@@ -52,10 +53,10 @@ export function Login() {
         <Center
             height='full'
             _dark={{
-                bg: "#282b30"
+                bg: colors.bgDark
             }}
             _light={{
-                bg: "#044D65"
+                bg: colors.blue1
             }}
         >
             <Center>
@@ -68,21 +69,21 @@ export function Login() {
                                     size={10}
                                     ml="2"
                                     mr="2"
-                                    color="#FF3030"
+                                    color={colors.danger}
                                 />
-                                <Text style={{color:'#FF3030', fontWeight:'700', fontSize:20, marginVertical:20}}>ATENÇÃO</Text>
+                                <Text style={{color: colors.danger, fontWeight:'700', fontSize:20, marginVertical:20}}>ATENÇÃO</Text>
 
                                 <Text style={{fontWeight:'700', fontSize:18, marginBottom:10}}>Você deve preencher o campo de login e senha para prosseguir</Text>
                             </Center>
 
                             <Button 
                                 _dark={{
-                                    color: "primary.50",
-                                    bg: "#0498B7"
+                                    color: colors.white,
+                                    bg: colors.blue3
                                 }}
                                 _light={{
-                                    color: "#36393e",
-                                    bg:"#0498B7"
+                                    color: colors.gray2,
+                                    bg: colors.blue3
                                 }}
                                 onPress={onClose}>
                                 Entendi
@@ -127,10 +128,10 @@ export function Login() {
                 borderTopLeftRadius={15}
                 borderTopRightRadius={15}
                 _light={{
-                    bg: "#fff"
+                    bg: colors.white
                 }}
                 _dark={{
-                    bg: "#424549"
+                    bg: colors.gray3
                 }}
             >
 
@@ -144,17 +145,17 @@ export function Login() {
                                 size={5}
                                 ml="2"
                                 mr="2"
-                                color="muted.400"
+                                color={colors.gray4}
                             />
                         }
                         mb={3}
                         variant="outline" 
                         fontSize={20}
                         _dark={{
-                            color: "primary.50"
+                            color: colors.white
                         }}
                         _light={{
-                            color: "#36393e"
+                            color: colors.gray2
                         }}
                     />
                 </FormControl>
@@ -169,7 +170,7 @@ export function Login() {
                                 } 
                                 size={5}
                                 mr="2"
-                                color="muted.400" />
+                                color={colors.gray4} />
                             </Pressable>
                         }
                         InputLeftElement={
@@ -177,23 +178,23 @@ export function Login() {
                                 size={5}
                                 ml="2"
                                 mr="2"
-                                color="muted.400"
+                                color={colors.gray4}
                             />
                         }
                         placeholder="Password" 
                         variant="outline" 
                         fontSize={20}
                         _dark={{
-                            color: "primary.50"
+                            color: colors.white
                         }}
                         _light={{
-                            color: "#36393e"
+                            color: colors.gray2
                         }}
                     />
                 </FormControl>
 
                 <Flex direction="row-reverse" m="2">
-                    <Text style={{color:'#0498B7', fontWeight:'700'}}>Esqueceu sua senha?</Text>
+                    <Text style={{color: colors.blue3, fontWeight:'700'}}>Esqueceu sua senha?</Text>
                 </Flex>
 
                 <HStack>
@@ -212,12 +213,12 @@ export function Login() {
                     mt={5}
                     mb={5}
                     _dark={{
-                        color: "primary.50",
-                        bg: "#0498B7"
+                        color: colors.white,
+                        bg: colors.blue2
                     }}
                     _light={{
-                        color: "#36393e",
-                        bg:"#0498B7"
+                        color: colors.white,
+                        bg:colors.blue3
                     }}
                 >
                     Login
@@ -226,17 +227,17 @@ export function Login() {
                 <HStack space={3} justifyContent="center" alignItems="center">
                     <Flex direction="row" mb="1.0" mt="1.0">
                         <Divider my="3" _light={{
-                            bg: "muted.200"
+                            bg: colors.gray4
                         }} _dark={{
-                            bg: "muted.500"
+                            bg: colors.gray2
                         }} />
                     </Flex>
                     <Text>Or</Text>
                     <Flex direction="row" mb="1.0" mt="1.0">
                         <Divider my="3" _light={{
-                            bg: "muted.200"
+                            bg: colors.gray4
                         }} _dark={{
-                            bg: "muted.500"
+                            bg: colors.gray2
                         }} />
                     </Flex>
                 </HStack>
@@ -264,7 +265,7 @@ export function Login() {
                 <Center>
                     <Text>
                         Não tem uma conta? 
-                        <Text style={{color:'#0498B7', fontWeight:'700'}}>SingUp</Text>
+                        <Text style={{color: colors.blue3, fontWeight:'700'}}>SingUp</Text>
                     </Text>
                 </Center>
 

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { VStack, Center, Image, Spinner } from "native-base";
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { colors } from "../../styles/base";
 
 
 export function Splash() {
@@ -30,10 +31,10 @@ export function Splash() {
         <Center
             height='full'
             _dark={{
-                bg: "#282b30"
+                bg: colors.bgDark
             }}
             _light={{
-                bg: "#044D65"
+                bg: colors.blue1
             }}
         >
             <VStack
