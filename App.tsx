@@ -17,8 +17,29 @@ export default function App() {
       <NativeBaseProvider>
         <Provider store={store}>
           <Views.Navigator>
-            <Views.Screen name="Home" component={Home} />
-            <Views.Screen name="Buscar" component={Search} />
+            <Views.Screen
+              options={{
+                title: " ",
+                headerShown: true,
+                headerStyle: {
+                  backgroundColor: "#044D65",
+                },
+              }}
+              name="Home"
+              component={Home}
+            />
+            <Views.Screen
+              options={{
+                title: "Buscar",
+                headerTintColor: "#EBEBF0",
+                headerStyle: {
+                  backgroundColor: "#044D65",
+                },
+                headerShown: true,
+              }}
+              name="Buscar"
+              component={Search}
+            />
           </Views.Navigator>
         </Provider>
       </NativeBaseProvider>
