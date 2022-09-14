@@ -2,12 +2,12 @@ import { ScrollView, VStack, HStack, Stack, Image, Text } from "native-base";
 import { TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import { spacings, colors, typography, fontFamily, dimensions } from "../../styles/base";
+import { spacings, colors, typography, fontConfig } from "../../styles/base";
 
 const Profile = () => {
   return (
     <VStack flex={1} margin={spacings.xsmall} space={spacings.small}>
-      <HStack alignItems="center">
+      <HStack alignItems="center" marginTop={spacings.xsmall}>
         <Stack>
           <Image
             alt="Developer profile image"
@@ -22,7 +22,7 @@ const Profile = () => {
         </Stack>
         <VStack>
           <Text
-            // fontFamily={fontFamily}
+            fontFamily={fontConfig.heading.bold}
             {...typography.subtitleMedium}
             lineHeight={0}
             color={colors.gray1}
@@ -30,7 +30,7 @@ const Profile = () => {
             Fernanda Ribeiro
           </Text>
           <Text
-            // fontFamily={fontFamily}
+            fontFamily={fontConfig.heading.bold}
             {...typography.bodySmall}
             lineHeight={0}
             color={colors.gray1}
@@ -40,7 +40,7 @@ const Profile = () => {
           <HStack alignItems="center" space={1}>
             <MaterialIcons name="place" size={12} color={colors.red1} />
             <Text
-              // fontFamily={fontFamily}
+              fontFamily={fontConfig.heading.bold}
               {...typography.bodySmall}
               lineHeight={0}
               color={colors.gray1}
@@ -52,7 +52,7 @@ const Profile = () => {
       </HStack>
       <VStack>
         <Text
-          // fontFamily={fontFamily}
+          fontFamily={fontConfig.heading.bold}
           {...typography.subtitleMedium}
           color={colors.gray1}
           marginBottom={spacings.xxsmall}
@@ -64,7 +64,7 @@ const Profile = () => {
             <HStack width="50%" marginBottom={spacings.xxsmall} alignItems="center" space={1}>
               <MaterialIcons name="circle" size={12} color={colors.gray2} />
               <Text
-                // fontFamily={fontFamily}
+                fontFamily={fontConfig.heading.bold}
                 {...typography.subtitleMedium}
                 color={colors.gray2}
               >
@@ -74,7 +74,7 @@ const Profile = () => {
             <HStack width="50%" marginBottom={spacings.xxsmall} alignItems="center" space={1}>
               <MaterialIcons name="circle" size={12} color={colors.gray2} />
               <Text
-                // fontFamily={fontFamily}
+                fontFamily={fontConfig.heading.bold}
                 {...typography.subtitleMedium}
                 color={colors.gray2}
               >
@@ -84,7 +84,7 @@ const Profile = () => {
             <HStack width="50%" marginBottom={spacings.xxsmall} alignItems="center" space={1}>
               <MaterialIcons name="circle" size={12} color={colors.gray2} />
               <Text
-                // fontFamily={fontFamily}
+                fontFamily={fontConfig.heading.bold}
                 {...typography.subtitleMedium}
                 color={colors.gray2}
               >
@@ -94,7 +94,7 @@ const Profile = () => {
             <HStack width="50%" marginBottom={spacings.xxsmall} alignItems="center" space={1}>
               <MaterialIcons name="circle" size={12} color={colors.gray2} />
               <Text
-                // fontFamily={fontFamily}
+                fontFamily={fontConfig.heading.bold}
                 {...typography.subtitleMedium}
                 color={colors.gray2}
               >
@@ -104,7 +104,7 @@ const Profile = () => {
             <HStack width="50%" marginBottom={spacings.xxsmall} alignItems="center" space={1}>
               <MaterialIcons name="circle" size={12} color={colors.gray2} />
               <Text
-                // fontFamily={fontFamily}
+                fontFamily={fontConfig.heading.bold}
                 {...typography.subtitleMedium}
                 color={colors.gray2}
               >
@@ -114,7 +114,7 @@ const Profile = () => {
             <HStack width="50%" marginBottom={spacings.xxsmall} alignItems="center" space={1}>
               <MaterialIcons name="circle" size={12} color={colors.gray2} />
               <Text
-                // fontFamily={fontFamily}
+                fontFamily={fontConfig.heading.bold}
                 {...typography.subtitleMedium}
                 color={colors.gray2}
               >
@@ -125,25 +125,13 @@ const Profile = () => {
         </ScrollView>
       </VStack>
       <VStack position="absolute" bottom={20}>
-        <Text
-          // fontFamily={fontFamily}
-          {...typography.linkLarge}
-          color={colors.gray1}
-        >
+        <Text fontFamily={fontConfig.heading.bold} {...typography.linkLarge} color={colors.gray1}>
           Termos e políticas
         </Text>
-        <Text
-          // fontFamily={fontFamily}
-          {...typography.linkLarge}
-          color={colors.gray1}
-        >
+        <Text fontFamily={fontConfig.heading.bold} {...typography.linkLarge} color={colors.gray1}>
           Perguntas frequentes
         </Text>
-        <Text
-          // fontFamily={fontFamily}
-          {...typography.linkLarge}
-          color={colors.gray1}
-        >
+        <Text fontFamily={fontConfig.heading.bold} {...typography.linkLarge} color={colors.gray1}>
           Suporte
         </Text>
       </VStack>
@@ -165,7 +153,7 @@ const Profile = () => {
           }}
         >
           <Text
-            // fontFamily={fontFamily}
+            fontFamily={fontConfig.heading.bold}
             {...typography.subtitleMedium}
             color={colors.danger}
           >
