@@ -1,10 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
 
-import favorites from './modules/favorites/reducer';
+import { categories, favorites, stacks, developers, states } from "./modules";
 
 const store = configureStore({
   reducer: {
+    categories,
     favorites,
+    stacks,
+    developers,
+    states,
   },
 });
 
