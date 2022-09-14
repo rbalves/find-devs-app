@@ -1,10 +1,9 @@
-import { Text } from "react-native";
+import React from "react";
+import { NativeBaseProvider } from "native-base";
+import MainStack from './src/navigators/MainStack';
+
 import { useFonts, Roboto_400Regular, Roboto_700Bold } from "@expo-google-fonts/roboto";
 import { Nunito_400Regular, Nunito_700Bold } from "@expo-google-fonts/nunito";
-
-import { Center, NativeBaseProvider } from "native-base";
-
-import { NavigationContainer } from "@react-navigation/native";
 
 import { Provider } from "react-redux";
 import store from "./src/store";
@@ -24,22 +23,10 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
       <NativeBaseProvider>
         <Provider store={store}>
-          <Center safeArea height="100%">
-            <Text
-              style={{
-                fontSize: 32,
-                lineHeight: 40,
-                fontFamily: fontConfig.heading.bold,
-              }}
-            >
-              Find Devs App
-            </Text>
-          </Center>
+          <MainStack /> 
         </Provider>
       </NativeBaseProvider>
-    </NavigationContainer>
   );
 }
