@@ -38,7 +38,16 @@ export const fontWeight = {
   bold: 700,
 };
 
-export const fontFamily = "'Roboto', sans-serif";
+export const fontConfig = {
+  heading: {
+    normal: "Roboto_400Regular",
+    bold: "Roboto_700Bold",
+  },
+  body: {
+    normal: "Nunito_400Regular",
+    bold: "Nunito_700Bold",
+  },
+};
 
 export const typography = {
   headlineXxlarge: {
