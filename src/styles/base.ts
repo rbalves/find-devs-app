@@ -17,6 +17,7 @@ export const colors = {
   blue2: "#07618D",
   blue3: "#0498B7",
   blue4: "#79C4CC",
+  blue5: "#AA90E633"
 };
 
 export const spacings = {
