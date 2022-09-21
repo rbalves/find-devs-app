@@ -13,11 +13,14 @@ export const colors = {
   gray1: "#262626",
   gray2: "#393939",
   gray3: "#454545",
+  gray4: "#a3a3a3",
   blue1: "#044D65",
   blue2: "#07618D",
   blue3: "#0498B7",
   blue4: "#79C4CC",
   blue5: "#AA90E633"
+  bgDark: "#282b30",
+  red1: "#EB5757",
 };
 
 export const spacings = {
@@ -37,7 +40,16 @@ export const fontWeight = {
   bold: 700,
 };
 
-export const fontFamily = "'Roboto', sans-serif";
+export const fontConfig = {
+  heading: {
+    normal: "Roboto_400Regular",
+    bold: "Roboto_700Bold",
+  },
+  body: {
+    normal: "Nunito_400Regular",
+    bold: "Nunito_700Bold",
+  },
+};
 
 export const typography = {
   headlineXxlarge: {
