@@ -13,7 +13,7 @@ const useGetDevelopers = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const getDevelopers = async () => {
+    const fetchDevelopers = async () => {
       try {
         setLoading(true);
 
@@ -27,7 +27,7 @@ const useGetDevelopers = () => {
       }
     };
 
-    getDevelopers();
+    fetchDevelopers();
   }, []);
 
   const developers = useSelector(getDevelopers);

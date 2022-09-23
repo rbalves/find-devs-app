@@ -35,9 +35,9 @@ export const spacings = {
 };
 
 export const fontWeight = {
-  regular: 400,
-  semibold: 600,
-  bold: 700,
+  regular: '400',
+  semibold: '600',
+  bold: '700',
 };
 
 export const fontConfig = {

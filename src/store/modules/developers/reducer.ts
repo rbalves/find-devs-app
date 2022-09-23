@@ -23,7 +23,7 @@ const developersSlice = createSlice({
   initialState,
   reducers: {
     setDevelopers: (state, action) => {
-      state.developers = [...state.developers, ...action.payload];
+      state.developers = [...action.payload];
     },
   },
 });
