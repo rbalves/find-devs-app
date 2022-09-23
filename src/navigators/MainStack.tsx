@@ -7,6 +7,8 @@ import { Splash } from '../screens/splash';
 import { Preload } from '../screens/preload';
 import { Login } from '../screens/login';
 import { Home } from '../screens/home';
+import Developers from '../screens/developers';
+import Profile from '../screens/profile';
 
 
 const { Navigator, Screen } = createNativeStackNavigator();
@@ -24,6 +26,8 @@ export default function StackNavigation(){
                 <Screen name="Preload" component={Preload} />
                 <Screen name="Login" component={Login} />
                 <Screen name="Home" component={Home} />
+                <Screen name="Developers" component={Developers} />
+                <Screen name="Profile" component={Profile} />
             </Navigator>
         </NavigationContainer>
     );

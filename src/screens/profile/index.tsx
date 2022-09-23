@@ -1,3 +1,4 @@
+import React from 'react'
 import { ScrollView, VStack, HStack, Stack, Image, Text } from "native-base";
 import { TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
