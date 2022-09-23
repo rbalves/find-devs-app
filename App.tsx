@@ -10,6 +10,11 @@ import store from "./src/store";
 
 import { fontConfig } from "./src/styles/base";
 
+import { Amplify } from 'aws-amplify';
+import awsmobile from './src/aws-exports';
+
+Amplify.configure(awsmobile);
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     Roboto_400Regular,
