@@ -1,16 +1,18 @@
 import {
-  ScrollView,
-  VStack,
-  HStack,
-  Heading,
-  Wrap,
   Button,
+  Heading,
+  HStack,
+  ScrollView,
   Text,
+  VStack,
+  Wrap,
 } from "native-base";
+import React from "react";
 import { TouchableOpacity } from "react-native";
+
 import { colors } from "../../styles/base";
 
-export default function Search() {
+const Search = () => {
   return (
     <>
       <ScrollView>
@@ -70,4 +72,6 @@ export default function Search() {
       </VStack>
     </>
   );
-}
+};
+
+export default Search;
