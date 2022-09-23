@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { VStack,
          Center,
          FormControl,
@@ -15,17 +15,44 @@ import { VStack,
          ScrollView,
          Flex,
          Checkbox,
-         AlertDialog } from "native-base";
+         AlertDialog,
+         Spinner } from "native-base";
 import { MaterialIcons } from '@expo/vector-icons/'
 
 import { useNavigation } from '@react-navigation/native';
 import { colors } from "../../styles/base";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+
+import { Auth } from "aws-amplify";
 
 export function Login() {
     const navigation = useNavigation();
 
     function handleScreen(screen: any) {
         navigation.navigate(screen)
+    }
+
+    const [userData, setUserData] = useState<IUserData>({
+        username: "",
+        password: "",
+    });
+    
+    const [isLoad, setIsload] = useState(false);
+
+    async function signIn({ username, password }: IUserData) {
+        setIsload(!isLoad);
+        try {
+          const user = await Auth.signIn(username, password);
+          await AsyncStorage.setItem('token', `${user.signInUserSession.accessToken.jwtToken}`);
+            navigation.reset({
+                routes:[{name:'Home'}]
+            });
+          console.log("Aeee Logou");
+          return user;
+        } catch (error) {
+          console.error("Erro ao logar", error);
+        }
     }
 
     /** 
@@ -139,6 +166,9 @@ export function Login() {
 
                 <FormControl>
                     <Input 
+                        onChangeText={(text) => setUserData({ ...userData, username: text })}
+                        value={userData.username}
+                        keyboardType="email-address"
                         placeholder="email@email.com"
                         InputLeftElement={
                             <Icon as={<MaterialIcons name="person" />}
@@ -162,6 +192,8 @@ export function Login() {
 
                 <FormControl>
                     <Input 
+                        onChangeText={(text) => setUserData({ ...userData, password: text })}
+                        value={userData.password}
                         type={show ? "text" : "password"}
                         InputRightElement={
                             <Pressable onPress={() => setShow(!show)}>
@@ -206,9 +238,13 @@ export function Login() {
                 </HStack>
 
                 <Button 
-                    // onPress={() => handleScreen('Home')}
-                    onPress={() => setIsOpen(!isOpen)}
-                    endIcon={<Icon as={MaterialIcons} name="send" size="sm" />}
+                    onPress={() => signIn(userData)}
+                    endIcon={
+                        isLoad == true ?
+                        <Spinner color="cyan.500" size="lg" m="2" />
+                        :
+                        <Icon as={MaterialIcons} name="send" size="sm" />
+                    }
                     size="lg"
                     mt={5}
                     mb={5}
@@ -221,7 +257,7 @@ export function Login() {
                         bg:colors.blue3
                     }}
                 >
-                    Login
+                    Entrar
                 </Button>
 
                 <HStack space={3} justifyContent="center" alignItems="center">

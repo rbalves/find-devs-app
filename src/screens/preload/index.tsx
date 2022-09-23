@@ -45,7 +45,7 @@ export function Preload() {
                     <Text color={colors.black}>Login</Text>
                 </Button>
                 <Button 
-                    onPress={() => handleScreen('Home')}
+                    onPress={() => handleScreen('SignUp')}
                     variant="outline"
                     size="lg"
                 >

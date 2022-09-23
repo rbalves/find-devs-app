@@ -3,6 +3,7 @@ import { VStack, Center, Image, Spinner } from "native-base";
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { colors } from "../../styles/base";
+import { Token } from "graphql";
 
 
 export function Splash() {
@@ -12,7 +13,6 @@ export function Splash() {
     useEffect(()=>{
         const checkToken = async () => {
             const token = await AsyncStorage.getItem('token');
-
             if(token){
                 await AsyncStorage.setItem('token', token);
 

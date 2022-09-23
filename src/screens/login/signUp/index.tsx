@@ -176,4 +176,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignUp;
+export default SignUp();
